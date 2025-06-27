@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="nav"></button>
+    <form action="">
+    <div class="privacy">
+      <input type="radio" id="public" name="privacy" value="public" checked>
+      <label for="public">Public</label>
+      <input type="radio" id="private" name="privacy" value="private">
+      <label for="private">Private</label>
+    </div>
+    <div class="title">
+        <h2 class="title"></h2>
+        <input type="text" name="roomName" maxlength="20">
+    </div>
+    <div class="description">
+        <p>Description</p>
+        <textarea name="roomDescription" rows="4" cols="50" placeholder="Enter your description here">
+    
+        </textarea>
+    </div>
+    <div class="type">
+        <input type="radio" name = "type" id="music" value="music"><label for="music">Music</label>
+        <input type="radio" name = "type" id="chat" value="chat"><label for="chat">Chat</label>
+        <input type="radio" name = "type" id="voice" value="voice"><label for="voice">Voice</label>
+        <input type="radio" name = "type" id="gaming" value="gaming"><label for="gaming">Gaming</label>
+        <input type="radio" name = "type" id="drawing" value="drawing"><label for="drawing">Drawing</label>
+        <input type="radio" name = "type" id="other" value="other"><label for="other">Other</label>
+    </div>
+    <div class="submit">
+         <button type="submit" class="circle-button">+</button>
+    </div>
+  </body>
+</html>
