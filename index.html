@@ -9,12 +9,12 @@
     <title>Document</title>
   </head>
   <body>
-    <section class="menu">
+    <div class="menu">
       <div>Home</div>
       <div>LogIn</div>
       <div>About Us</div>
       <div>Contact</div>
-    </section>
+    </div>
 
     <header>
       <section class="TOPheader">
@@ -27,21 +27,50 @@
     </header>
 
     <main>
-      <div class="LogIn">
-        <h1 class="header"></h1>
-        <p class="desc"></p>
-      </div>
-      <div class="AboutUs">
-        <h1 class="header"></h1>
-        <div class="TeamPics">
-          <div class="kriti"></div>
-          <div class="somay"></div>
-          <div class="divyansh"></div>
+      <div class="LogIn" id="LogIn">
+        <h1 class="header">Step Inside</h1>
+        <p class="desc">No fancy promises here. Just a space where your thoughts don't have to make perfect sense and nobody's timing how long it takes you to figure things out. Think of it as that corner of the internet where you can actually breathe.</p>
+        <div class="formlogin">
+        <form action="">
+          <input type="text" name="loginuser" id="logiuser" placeholder="Enter username/gmail">
+          <label for="loginuser">Who are you again?</label>
+          <input type="password" name="password" id="password" placeholder="Make it mystical">
+          <label for="password">Password</label>
+        </form>
+        </form>
         </div>
       </div>
-      <div class="ContactUs">
-        <h1 class="header">
-          <p class="desc"></p>
+      <div class="AboutUs" id="AboutUs">
+        <h1 class="header">The People Behind This</h1>
+        <p>We're a small team of developers, designers, and psychology enthusiasts who got tired of mental health apps that felt more like homework than help. Yeah, we are like you, we used those. So we decided to build something different.</p>
+        <div class="TeamPics">
+          <div class="Somay">
+            <img src="" alt="">
+            <p>Somay</p>
+          </div>
+          <div class="kriti">
+            <img src="" alt="">
+            <p>Kriti</p>
+          </div>
+          <div class="divyansh">
+            <img src="" alt="">
+            <p>divyansh</p></div>
+          <p>Our approach is simple: create tools that work with how people actually think and feel, not how we think they should. We test everything with real people because that's the only way to know if it actually helps.</p>
+        </div>
+
+      </div>
+      <div class="ContactUs" id = "ContactUs">
+        <h1 class="header">Get In Touch</h1>
+          <p class="desc">Found a bug? Have an idea? Just want to tell us this actually helped? We're real people who check our messages. No chatbots, no copy-paste responses. Just us, probably drinking too much coffee and trying to make this thing work better.</p>
+          <div class="query">
+            <input type="text" name="gmail" id="gmail">
+          </div>
+          <div class="formcontact">
+            <form action="">
+              <input type="text" name="mailquery" id=""mailquery><label for="mailquery">Gmail</label>
+              <textarea name="query" id="query"></textarea>
+            </form>
+          </div>
           <div class="icons">
             <div class="insta"></div>
             <div class="linkedin"></div>
@@ -52,8 +81,8 @@
       </div>
     </main>
     <footer>
-      <div class="welcome"></div>
-      <div class="copyrights"></div>
+      <div class="welcome">ZUUUSH</div>
+      <div class="copyrights">© 2025 Zuuush. Made by humans who also need therapy sometimes.</div>
     </footer>
   </body>
 </html>
