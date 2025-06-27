@@ -1,3 +1,5 @@
+#Zuuush 🫧
+
 ## Frontend Notes:- 
 ### Font: 
 - Main heading "zuuush": Space Grotesk, 52px, weight 700
@@ -24,6 +26,8 @@ Inter: https://fonts.google.com/specimen/Inter
 .desc for any other text
 .name for chatroom names
 .text for texts 
+
+### Other info 
 
 
 
