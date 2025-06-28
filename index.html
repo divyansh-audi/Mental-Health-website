@@ -3,86 +3,351 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap"
-      rel="stylesheet">
-    <title>Document</title>
+    <title>Zuuush - Breath and Blink</title>
+    <meta name="description" content="A mental health platform focused on gamified wellness challenges, community support, and personal growth tracking.">
+    <meta name="keywords" content="mental health, wellness, challenges, community, therapy, mindfulness">
+    
+    <!-- Google Fonts - DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts - Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Fontshare - Satoshi -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logoo.png">
   </head>
   <body>
-    <div class="menu">
-      <div>Home</div>
-      <div>LogIn</div>
-      <div>About Us</div>
-      <div>Contact</div>
+    <!-- Background Animation -->
+    <div class="floating-shapes global-shapes">
+      <div class="floating-shape"></div>
+      <div class="floating-shape"></div>
+      <div class="floating-shape"></div>
+      <div class="floating-shape"></div>
+      <div class="floating-shape"></div>
+      <div class="floating-shape"></div>
     </div>
 
-    <header>
-      <section class="TOPheader">
-        <h1>Zuuush</h1>
-        <h3>Breath and Blink</h3>
+    <!-- Navigation Menu -->
+    <nav class="navigation glass">
+      <a href="#home" class="nav-item active" title="Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#login" class="nav-item" title="LogIn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 17L15 12L10 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#about" class="nav-item" title="About Us">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45768C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#contact" class="nav-item" title="Contact">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header-section" id="home">
+        <div class="header-background"></div>
+        <div class="header-content">
+            <div class="TOPheader">
+                <div class="logo">
+                    <div class="header-logo">
+                        <img src="images/logo.png" alt="Zuuush Logo">
+                    </div>
+                </div>
+                <h1>ZUUUSH</h1>
+                <p class="header-tagline">Empowering Mental Wellness Through Connection & Support</p>
+            </div>
+            
+            <!-- Decorative elements -->
+            <div class="header-decoration">
+                <div class="floating-element" style="--delay: 0s; --position: 10% 20%;">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="floating-element" style="--delay: 1s; --position: 80% 30%;">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                        <line x1="9" y1="9" x2="9.01" y2="9"/>
+                        <line x1="15" y1="9" x2="15.01" y2="9"/>
+                    </svg>
+                </div>
+                <div class="floating-element" style="--delay: 2s; --position: 20% 80%;">
+                    <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </div>
+                <div class="floating-element" style="--delay: 3s; --position: 70% 70%;">
+                    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
       </section>
-      <section class="logo">
-        <img src="logo.pnglogo" alt="">
-      </section>
-    </header>
 
     <main>
-      <div class="LogIn" id="LogIn">
-        <h1 class="header">Step Inside</h1>
-        <p class="desc">No fancy promises here. Just a space where your thoughts don't have to make perfect sense and nobody's timing how long it takes you to figure things out. Think of it as that corner of the internet where you can actually breathe.</p>
-        <div class="formlogin">
-        <form action="">
-          <input type="text" name="loginuser" id="logiuser" placeholder="Enter username/gmail">
-          <label for="loginuser">Who are you again?</label>
-          <input type="password" name="password" id="password" placeholder="Make it mystical">
-          <label for="password">Password</label>
-        </form>
+      <!-- Login Section -->
+      <section class="LogIn" id="login">
+        <div class="login-container">
+            <div class="login-layout">
+                <!-- Login Form - Left Side -->
+                <div class="login-form-section">
+                    <div class="login-card">
+                        <div class="header">Welcome Back</div>
+                        <form class="login-form">
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Password" class="form-input" required>
+                            </div>
+                            <button type="submit" class="btn">Sign In</button>
         </form>
         </div>
       </div>
-      <div class="AboutUs" id="AboutUs">
-        <h1 class="header">The People Behind This</h1>
-        <p>We're a small team of developers, designers, and psychology enthusiasts who got tired of mental health apps that felt more like homework than help. Yeah, we are like you, we used those. So we decided to build something different.</p>
-        <div class="TeamPics">
-          <div class="Somay">
-            <img src="" alt="">
-            <p>Somay</p>
-          </div>
-          <div class="kriti">
-            <img src="" alt="">
-            <p>Kriti</p>
-          </div>
-          <div class="divyansh">
-            <img src="" alt="">
-            <p>divyansh</p></div>
-          <p>Our approach is simple: create tools that work with how people actually think and feel, not how we think they should. We test everything with real people because that's the only way to know if it actually helps.</p>
+                
+                <!-- Description - Right Side -->
+                <div class="login-description-section">
+                    <div class="description-content">
+                        <h2 class="description-title">A Safe Space for Your Mind</h2>
+                        <p class="description-text">
+                            No fancy promises here. Just a space where your thoughts don't have to make perfect sense and nobody's timing how long it takes you to figure things out. Think of it as that corner of the internet where you can actually breathe. No pressure to impress anyone or rush through your process. You can show up exactly as you are, with all your questions, half-formed ideas, or even just curiosity. This place is yours.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
+      </section>
 
-      </div>
-      <div class="ContactUs" id = "ContactUs">
-        <h1 class="header">Get In Touch</h1>
-          <p class="desc">Found a bug? Have an idea? Just want to tell us this actually helped? We're real people who check our messages. No chatbots, no copy-paste responses. Just us, probably drinking too much coffee and trying to make this thing work better.</p>
-          <div class="query">
-            <input type="text" name="gmail" id="gmail">
+      <!-- About Us Section -->
+      <div class="AboutUs section" id="about">
+        <div class="container">
+          <div class="about-container">
+            <h1 class="header animate-on-scroll">The People Behind This</h1>
+            <p class="about-description animate-on-scroll">
+              We're a small team of developers, designers, and psychology enthusiasts who got tired of mental health apps that felt more like homework than help. Yeah, we are like you, we used those. So we decided to build something different.
+            </p>
+            <div class="TeamPics team-grid">
+              <div class="Somay team-member card-3d stagger-animation">
+                <div class="team-photo hover-scale">
+                  <img src="images/somay.jpg" alt="Somay">
+                </div>
+                <p class="team-name">Somay</p>
+              </div>
+              <div class="kriti team-member card-3d stagger-animation">
+                <div class="team-photo hover-scale">
+                  <img src="images/kriti.jpg" alt="Kriti">
+                </div>
+                <p class="team-name">Kriti</p>
+              </div>
+              <div class="divyansh team-member card-3d stagger-animation">
+                <div class="team-photo hover-scale">
+                  <img src="images/divyansh.jpg" alt="Divyansh">
+                </div>
+                <p class="team-name">Divyansh</p>
+              </div>
           </div>
-          <div class="formcontact">
-            <form action="">
-              <input type="text" name="mailquery" id=""mailquery><label for="mailquery">Gmail</label>
-              <textarea name="query" id="query"></textarea>
+            <p class="about-closing animate-on-scroll">
+              Our approach is simple: create tools that work with how people actually think and feel, not how we think they should. We test everything with real people because that's the only way to know if it actually helps.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Us Section -->
+      <section class="ContactUs" id="contact">
+        <div class="contact-container">
+            <div class="contact-layout">
+                <!-- Description - Left Side -->
+                <div class="contact-description-section">
+                    <div class="description-content">
+                        <h2 class="description-title">We Actually Read These</h2>
+                        <p class="description-text">
+                            Found a bug? Have an idea? Just want to tell us this actually helped? We're real people who check our messages. No chatbots, no copy-paste responses. Just us, probably drinking too much coffee and trying to make this thing work better. Seriously, your feedback doesn't disappear into some black hole. Whether it's a tiny typo or a big idea that could change everything, we'd love to hear from you. Go ahead—send us a note anytime.
+                        </p>
+                        
+                        <!-- Additional content to fill space -->
+                        <div class="contact-highlights">
+                            <div class="contact-highlight">
+                                <div class="highlight-content">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                    </svg>
+                                    <p>Your message won't get lost in a black hole. We promise.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-highlight">
+                                <div class="highlight-content">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                    </svg>
+                                    <p>We usually respond within 24 hours. No waiting games.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-highlight">
+                                <div class="highlight-content">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"/>
+                                        <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+                                    </svg>
+                                    <p>Every message matters, from typos to big ideas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form - Right Side -->
+                <div class="contact-form-section">
+                    <div class="contact-form">
+                        <h3 class="contact-form-title">Send us a message</h3>
+                        <form class="contact-form-inner">
+                            <div class="contact-form-group">
+                                <label for="contact-name" class="contact-label">Name</label>
+                                <input type="text" id="contact-name" class="contact-input" required>
+                            </div>
+                            <div class="contact-form-group">
+                                <label for="contact-email" class="contact-label">Email</label>
+                                <input type="email" id="contact-email" class="contact-input" required>
+                            </div>
+                            <div class="contact-form-group">
+                                <label for="contact-message" class="contact-label">Message</label>
+                                <textarea id="contact-message" class="contact-input contact-textarea" required></textarea>
+                            </div>
+                            <button type="submit" class="contact-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+    
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+          <!-- Brand Section -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="images/logo.png" alt="Zuuush Logo">
+            </div>
+            <h2 class="welcome">Thank You</h2>
+            <p class="footer-tagline">For choosing to prioritize your mental wellness with us</p>
+          </div>
+
+          <!-- Newsletter Section -->
+          <div class="footer-newsletter">
+            <h3>Stay Connected</h3>
+            <p>Get updates on new features and wellness tips</p>
+            <form class="newsletter-form">
+              <div class="newsletter-input-group">
+                <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </button>
+              </div>
             </form>
           </div>
-          <div class="icons">
-            <div class="insta"></div>
-            <div class="linkedin"></div>
-            <div class="x"></div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul class="footer-links-list">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#login">Login</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
           </div>
-          <img src="" alt="" >
-        </h1>
+
+          <!-- Social Links -->
+         
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-divider"></div>
+          <p class="copyrights">© 2024 ZUUUSH. All rights reserved. Made with for mental wellness.</p>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="footer-decoration">
+          <div class="footer-floating-element" style="--delay: 0s; --position: 10% 20%;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <div class="footer-floating-element" style="--delay: 2s; --position: 80% 30%;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="footer-floating-element" style="--delay: 4s; --position: 20% 80%;">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div class="footer-floating-element" style="--delay: 1s; --position: 70% 70%;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+              <line x1="9" y1="9" x2="9.01" y2="9"/>
+              <line x1="15" y1="9" x2="15.01" y2="9"/>
+            </svg>
+          </div>
+          <div class="footer-floating-element" style="--delay: 3s; --position: 30% 40%;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+        </div>
       </div>
-    </main>
-    <footer>
-      <div class="welcome">ZUUUSH</div>
-      <div class="copyrights">© 2025 Zuuush. Made by humans who also need therapy sometimes.</div>
     </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/animations.js"></script>
+    <script src="js/form-handlers.js"></script>
   </body>
 </html>
