@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wellness Challenges - Zuuush</title>
+    <meta name="description" content="Join wellness challenges and track your progress with the community">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/wellness-challenges.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/logoo.png">
+  </head>
+  <body>
+    <!-- Background Animation -->
+    <div class="floating-shapes global-shapes">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+    </div>
+
+    <!-- Premium Grid Pattern -->
+    <div class="premium-grid"></div>
+
+    <!-- Navigation Menu -->
+    <nav class="navigation glass">
+      <a href="../index.html" class="nav-item" title="Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="../html-files/main.html" class="nav-item" title="Dashboard">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="../html-files/achievements.html" class="nav-item" title="Achievements">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 22h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 14.66V17c0 1.1.9 2 2 2s2-.9 2-2v-2.34" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="../html-files/profile-page.html" class="nav-item" title="Profile">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45768C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="../html-files/search-room.html" class="nav-item" title="Search Room">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="../html-files/create-room.html" class="nav-item" title="Create Room">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="../html-files/chatroom.html" class="nav-item" title="Chat Room">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="challenges-container">
+        <!-- Premium Glassmorphism Header -->
+        <header class="challenges-header">
+          <h1 class="premium-title gradient-text">Wellness Challenges</h1>
+          <p class="premium-subtitle gradient-subtitle">Join challenges, track progress, and grow with the community on your wellness journey</p>
+          <div class="challenge-stats">
+            <div class="stat-card">
+              <span class="stat-value">3</span>
+              <span class="stat-label">Active Challenges</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">8</span>
+              <span class="stat-label">Completed</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">1.2k</span>
+              <span class="stat-label">Participants</span>
+            </div>
+          </div>
+        </header>
+        <section class="challenges-section">
+          <div class="challenges-grid" id="challengesGrid"></div>
+          <script>
+          // Backend-friendly: challenge data array
+          const challenges = [
+            { title: "Mindful Mornings", emoji: "🎯", description: "Start your day with 10 minutes of mindfulness for 30 days.", progress: 60 },
+            { title: "Fitness Streak", emoji: "👟", description: "Exercise daily and log your progress for 21 days.", progress: 80 },
+            { title: "Healthy Eating", emoji: "🍎", description: "Share recipes and tips for a balanced diet for 14 days.", progress: 40 },
+            { title: "30-Day Mindfulness Journey", emoji: "🌱", description: "Day 7 of 30 - Building mindful habits", progress: 23 },
+            { title: "Home Workout Challenge", emoji: "✊🏼", description: "Day 12 of 21 - Keep moving at home", progress: 57 },
+            { title: "Daily Gratitude Practice", emoji: "🎐", description: "Day 7 of 14 - Cultivating gratitude and positivity", progress: 50 },
+            { title: "Hydration Challenge", emoji: "🐳", description: "Day 3 of 10 - Drink more water!", progress: 30 },
+            { title: "Digital Detox Challenge", emoji: "👀", description: "Day 2 of 7 - Less screen time, more me time", progress: 15 },
+            { title: "Morning Routine Challenge", emoji: "🌬️", description: "Day 5 of 21 - Start your day right", progress: 24 },
+            { title: "Kindness Challenge", emoji: "🐁", description: "Day 1 of 7 - Spread kindness daily", progress: 5 }
+          ];
+          const grid = document.getElementById('challengesGrid');
+          grid.innerHTML = challenges.map(ch =>
+            `<div class="challenge-card premium-card">
+              <div class="challenge-icon">${ch.emoji}</div>
+              <h3 class="challenge-title">${ch.title}</h3>
+              <p class="challenge-desc">${ch.description}</p>
+              <div class="challenge-progress">
+                <div class="progress-bar"><div class="progress-fill" style="width: ${ch.progress}%"></div></div>
+                <span class="progress-text">${ch.progress}% Complete</span>
+              </div>
+              <button class="btn-primary">Join Challenge</button>
+            </div>`
+          ).join('');
+          </script>
+        </section>
+
+        <!-- Challenge Categories -->
+        <section class="challenges-section">
+            <div class="challenges-header-section">
+                <h2 class="premium-section-title gradient-text">Challenge Categories</h2>
+                <div class="filter-controls">
+                    <button class="filter-button active" data-filter="all">All</button>
+                    <button class="filter-button" data-filter="mindfulness">🧘 Mindfulness</button>
+                    <button class="filter-button" data-filter="fitness">🏋️ Fitness</button>
+                    <button class="filter-button" data-filter="nutrition">🍏 Nutrition</button>
+                    <button class="filter-button" data-filter="social">🤝 Social</button>
+                </div>
+            </div>
+            <div class="challenges-grid" id="challengesGrid">
+                <!-- Challenge cards will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Featured Challenges -->
+        <section class="challenges-section">
+            <div class="challenges-header-section">
+                <h2>Featured Challenges</h2>
+            </div>
+            
+            <div class="challenges-grid">
+                <div class="challenge-card featured">
+                    <div class="challenge-banner">
+                        <div class="challenge-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"/>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                                <line x1="15" y1="9" x2="15.01" y2="9"/>
+                            </svg>
+                        </div>
+                        <div class="challenge-status">Trending</div>
+                    </div>
+                    <div class="challenge-content">
+                        <h3>30-Day Mindfulness Journey</h3>
+                        <p>Develop a daily meditation practice and cultivate inner peace</p>
+                        <div class="challenge-meta">
+                            <div class="challenge-stats">
+                                <span class="stat">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    30 days
+                                </span>
+                                <span class="stat">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                    </svg>
+                                    2.1k participants
+                                </span>
+                                <span class="stat">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                    </svg>
+                                    4.8/5 rating
+                                </span>
+                            </div>
+                            <div class="challenge-progress">
+                                <span class="progress-text">Day 19 of 30</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-primary">Continue Challenge</button>
+                    </div>
+                </div>
+                
+                <div class="challenge-card featured">
+                    <div class="challenge-banner">
+                        <div class="challenge-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 4h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+                                <path d="M15 2v4a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V2"/>
+                                <path d="M8 12h8"/>
+                                <path d="M8 16h8"/>
+                                <path d="M8 8h8"/>
+                            </svg>
+                        </div>
+                        <div class="challenge-status">New</div>
+                    </div>
+                    <div class="challenge-content">
+                        <h3>Home Workout Challenge</h3>
+                        <p>Build strength and endurance with daily home exercises</p>
+                        <div class="challenge-meta">
+                            <div class="challenge-stats">
+                                <span class="stat">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    21 days
+                                </span>
+                                <span class="stat">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                    </svg>
+                                    890 participants
+                                </span>
+                                <span class="stat">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                    </svg>
+                                    4.6/5 rating
+                                </span>
+                            </div>
+                            <div class="challenge-progress">
+                                <span class="progress-text">Not started</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-secondary">Join Challenge</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Active Challenges -->
+        <section class="challenges-section">
+            <div class="challenges-header-section">
+                <h2>My Active Challenges</h2>
+            </div>
+            
+            <div class="challenges-grid">
+                <div class="challenge-card active">
+                    <div class="challenge-banner">
+                        <div class="challenge-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"/>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                                <line x1="15" y1="9" x2="15.01" y2="9"/>
+                            </svg>
+                        </div>
+                        <div class="challenge-status">Active</div>
+                    </div>
+                    <div class="challenge-content">
+                        <h3>30-Day Mindfulness Journey</h3>
+                        <p>Day 19 of 30 - Developing daily meditation practice</p>
+                        <div class="challenge-meta">
+                            <div class="challenge-progress">
+                                <span class="progress-text">65% Complete</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="challenge-actions">
+                            <button class="btn-primary">Check In</button>
+                            <button class="btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="challenge-card active">
+                    <div class="challenge-banner">
+                        <div class="challenge-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10,9 9,9 8,9"/>
+                            </svg>
+                        </div>
+                        <div class="challenge-status">Active</div>
+                    </div>
+                    <div class="challenge-content">
+                        <h3>Daily Gratitude Practice</h3>
+                        <p>Day 7 of 14 - Cultivating gratitude and positivity</p>
+                        <div class="challenge-meta">
+                            <div class="challenge-progress">
+                                <span class="progress-text">50% Complete</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="challenge-actions">
+                            <button class="btn-primary">Check In</button>
+                            <button class="btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="challenge-card active">
+                    <div class="challenge-banner">
+                        <div class="challenge-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div class="challenge-status">Active</div>
+                    </div>
+                    <div class="challenge-content">
+                        <h3>Hydration Challenge</h3>
+                        <p>Day 3 of 7 - Building healthy hydration habits</p>
+                        <div class="challenge-meta">
+                            <div class="challenge-progress">
+                                <span class="progress-text">43% Complete</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 43%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="challenge-actions">
+                            <button class="btn-primary">Check In</button>
+                            <button class="btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Leaderboard -->
+        <section class="challenges-section">
+            <div class="challenges-header-section">
+                <h2>Community Leaderboard</h2>
+            </div>
+            
+            <div class="leaderboard">
+                <div class="leaderboard-item top">
+                    <div class="rank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                            <path d="M4 22h16"/>
+                            <path d="M10 14.66V17c0 1.1.9 2 2 2s2-.9 2-2v-2.34"/>
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+                        </svg>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <div class="user-details">
+                            <h4>Sarah Johnson</h4>
+                            <p>Wellness Warrior</p>
+                        </div>
+                    </div>
+                    <div class="user-stats">
+                        <span class="points">2,450 pts</span>
+                        <span class="challenges">12 completed</span>
+                    </div>
+                </div>
+                
+                <div class="leaderboard-item">
+                    <div class="rank">2</div>
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <div class="user-details">
+                            <h4>Mike Chen</h4>
+                            <p>Mindfulness Master</p>
+                        </div>
+                    </div>
+                    <div class="user-stats">
+                        <span class="points">2,180 pts</span>
+                        <span class="challenges">10 completed</span>
+                    </div>
+                </div>
+                
+                <div class="leaderboard-item">
+                    <div class="rank">3</div>
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <div class="user-details">
+                            <h4>Emma Davis</h4>
+                            <p>Fitness Enthusiast</p>
+                        </div>
+                    </div>
+                    <div class="user-stats">
+                        <span class="points">1,950 pts</span>
+                        <span class="challenges">9 completed</span>
+                    </div>
+                </div>
+                
+                <div class="leaderboard-item">
+                    <div class="rank">4</div>
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <div class="user-details">
+                            <h4>Alex Thompson</h4>
+                            <p>Nutrition Expert</p>
+                        </div>
+                    </div>
+                    <div class="user-stats">
+                        <span class="points">1,720 pts</span>
+                        <span class="challenges">8 completed</span>
+                    </div>
+                </div>
+                
+                <div class="leaderboard-item">
+                    <div class="rank">5</div>
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <div class="user-details">
+                            <h4>Lisa Wang</h4>
+                            <p>Social Butterfly</p>
+                        </div>
+                    </div>
+                    <div class="user-stats">
+                        <span class="points">1,580 pts</span>
+                        <span class="challenges">7 completed</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Challenge Details Modal -->
+    <div class="challenge-modal" id="challengeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalChallengeTitle">Challenge Title</h2>
+                <button class="modal-close" id="modalClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="challenge-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Duration:</span>
+                        <span class="detail-value" id="modalDuration">30 days</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Participants:</span>
+                        <span class="detail-value" id="modalParticipants">2.1k</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Difficulty:</span>
+                        <span class="detail-value" id="modalDifficulty">Intermediate</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Rewards:</span>
+                        <span class="detail-value" id="modalRewards">+100 XP, +2 Badges</span>
+                    </div>
+                </div>
+                <div class="challenge-description" id="modalDescription">
+                    Challenge description will appear here...
+                </div>
+                <div class="challenge-schedule" id="modalSchedule">
+                    <!-- Schedule will be populated here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn-primary" id="modalJoin">Join Challenge</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/animations.js"></script>
+    <script src="../js/wellness-challenges.js?v=3"></script>
+  </body>
+</html> 

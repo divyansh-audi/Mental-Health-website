@@ -762,6 +762,28 @@
   z-index: 2;
 }
 
+.team-role {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-4);
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all var(--transition-normal);
+}
+
+.team-member:hover .team-role {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .about-closing {
   text-align: center;
   max-width: 900px;

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room - Zuuush</title>
+    <meta name="description" content="Create a new challenge room for daily wellness activities on Zuuush">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/create-room.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logoo.png">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="floating-shapes global-shapes">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+    </div>
+
+    <!-- Premium Grid Pattern -->
+    <div class="premium-grid"></div>
+
+    <!-- Navigation Button -->
+    <button class="nav" id="navButton">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Navigation Dropdown -->
+    <div class="nav-dropdown" id="navDropdown">
+        <a href="index.html" class="nav-option">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"/>
+                <path d="M9 22V12H15V22"/>
+            </svg>
+            Home
+        </a>
+        <a href="html-files/profile-page.html" class="nav-option">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"/>
+                <circle cx="12" cy="7" r="4"/>
+            </svg>
+            Profile
+        </a>
+        <a href="html-files/search-room.html" class="nav-option">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21L16.65 16.65"/>
+            </svg>
+            Search Room
+        </a>
+        <a href="#" class="nav-option">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"/>
+                <path d="M14 2V8H20"/>
+                <path d="M16 13H8"/>
+                <path d="M16 17H8"/>
+                <path d="M10 9H8"/>
+            </svg>
+            Daily Log
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="create-room-container">
+        <form class="create-room-form" id="createRoomForm">
+            <!-- Header Section -->
+            <div class="form-header">
+                <h1>Create Your Room</h1>
+                <p>Build a space where people can connect, grow, and support each other through shared wellness activities</p>
+            </div>
+
+            <!-- Left Column -->
+            <div class="form-left">
+                <!-- Privacy Selection -->
+                <div class="privacy">
+                    <input type="radio" id="public" name="privacy" value="public" checked>
+                    <label for="public">Public</label>
+                    <input type="radio" id="private" name="privacy" value="private">
+                    <label for="private">Private</label>
+                </div>
+
+                <!-- Room Title Section -->
+                <div class="title">
+                    <h2>Room Title</h2>
+                    <input type="text" name="roomName" maxlength="20" placeholder="What's this room about?" required>
+                    <div class="character-counter">
+                        <span id="charCount">0</span>/20
+                    </div>
+                </div>
+
+                <!-- Description Section -->
+                <div class="description">
+                    <p>Description</p>
+                    <textarea name="roomDescription" rows="4" cols="50" placeholder="Tell people what this room is for..." required></textarea>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="form-right">
+                <!-- Category Selection -->
+                <div class="type">
+                    <h3>Room Type</h3>
+                    <input type="radio" name="type" id="music" value="music" required>
+                    <label for="music">Music</label>
+                    
+                    <input type="radio" name="type" id="chat" value="chat">
+                    <label for="chat">Chat</label>
+                    
+                    <input type="radio" name="type" id="voice" value="voice">
+                    <label for="voice">Voice</label>
+                    
+                    <input type="radio" name="type" id="gaming" value="gaming">
+                    <label for="gaming">Gaming</label>
+                    
+                    <input type="radio" name="type" id="drawing" value="drawing">
+                    <label for="drawing">Drawing</label>
+                    
+                    <input type="radio" name="type" id="other" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit">
+                <button type="submit" class="circle-button" id="submitButton">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Creating your room...</p>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                </svg>
+            </div>
+            <h3>Room Created Successfully!</h3>
+            <p>Your room is now ready for others to join.</p>
+            <button class="btn-primary" onclick="window.location.href='html-files/chatroom.html'">
+                Go to Room
+            </button>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="js/create-room.js"></script>
+</body>
+</html> 

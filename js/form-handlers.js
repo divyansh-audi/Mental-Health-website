@@ -293,9 +293,18 @@ class LoginFormHandler extends FormValidator {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate authentication
-        if (data.username && data.password) {
+        if (data.email && data.password) {
+          // Extract username from email (for demo purposes)
+          const username = data.email.split('@')[0];
+          const userData = {
+            name: username.charAt(0).toUpperCase() + username.slice(1), // Capitalize first letter
+            email: data.email,
+            id: 'user_' + Date.now(),
+            loginTime: new Date().toISOString()
+          };
+          
           this.isAuthenticated = true;
-          resolve({ user: data.username, token: 'mock-jwt-token' });
+          resolve({ user: userData, token: 'mock-jwt-token' });
         } else {
           reject(new Error('Invalid credentials'));
         }
@@ -306,10 +315,24 @@ class LoginFormHandler extends FormValidator {
   showSuccessMessage() {
     this.showFormMessage('Welcome back! Redirecting to dashboard...', 'success');
     
-    // Simulate redirect
+    // Save user data to localStorage
+    const formData = new FormData(this.form);
+    const email = formData.get('email');
+    const username = email.split('@')[0];
+    const userData = {
+      name: username.charAt(0).toUpperCase() + username.slice(1),
+      email: email,
+      id: 'user_' + Date.now(),
+      loginTime: new Date().toISOString()
+    };
+    
+    // Save to localStorage for the dashboard to use
+    localStorage.setItem('currentUser', JSON.stringify(userData));
+    sessionStorage.setItem('user', JSON.stringify(userData));
+    
+    // Simulate redirect to dashboard
     setTimeout(() => {
-      // In a real app, this would redirect to the dashboard
-      alert('Login successful! This would redirect to the Zuuush dashboard.');
+      window.location.href = 'html-files/main.html';
     }, 2000);
   }
 }
@@ -342,7 +365,7 @@ class ContactFormHandler extends FormValidator {
 // Initialize form handlers when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize login form
-  const loginForm = document.querySelector('#login form');
+  const loginForm = document.querySelector('#loginForm');
   if (loginForm) {
     new LoginFormHandler(loginForm);
   }

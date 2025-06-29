@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Pages - Zuuush</title>
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .test-links {
+            display: grid;
+            gap: 1rem;
+        }
+        .test-link {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .test-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        .status {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test Pages - No Redirects</h1>
+        <div class="test-links">
+            <a href="html-files/achievements.html" class="test-link">
+                <strong>Achievements Page</strong>
+                <div class="status">Should load achievements without redirecting to index.html</div>
+            </a>
+            <a href="html-files/wellness-challenges.html" class="test-link">
+                <strong>Wellness Challenges Page</strong>
+                <div class="status">Should load challenges without redirecting to index.html</div>
+            </a>
+            <a href="html-files/search-room.html" class="test-link">
+                <strong>Search Room Page</strong>
+                <div class="status">Should load room search without redirecting to index.html</div>
+            </a>
+            <a href="html-files/chatroom.html" class="test-link">
+                <strong>Chatroom Page</strong>
+                <div class="status">Should load chat interface without redirecting to index.html</div>
+            </a>
+            <a href="html-files/main.html" class="test-link">
+                <strong>Main Dashboard</strong>
+                <div class="status">Should load dashboard without redirecting to index.html</div>
+            </a>
+            <a href="html-files/create-room.html" class="test-link">
+                <strong>Create Room Page</strong>
+                <div class="status">Should load room creation without redirecting to index.html</div>
+            </a>
+        </div>
+        
+        <div style="margin-top: 2rem; text-align: center; opacity: 0.8;">
+            <p>✅ All pages should now work independently without authentication redirects</p>
+            <p>🔄 Cache-busting parameters added to force reload of updated JavaScript</p>
+            <p>🚀 Server running on http://localhost:8000</p>
+        </div>
+    </div>
+</body>
+</html> 
