@@ -565,4 +565,28 @@ logoutBtn.addEventListener('click', () => {
   
   // Reset user display
   userNameElement.textContent = 'User';
-}); 
+});
+
+// TODO: Connect to Node.js backend API for user data
+// Example:
+// fetch('/api/profile', { headers: { Authorization: 'Bearer TOKEN' } })
+//   .then(res => res.json())
+//   .then(data => { /* render user profile */ });
+
+// TODO: Connect to Node.js backend API for mood data
+// Example:
+// fetch('/api/moods', { headers: { Authorization: 'Bearer TOKEN' } })
+//   .then(res => res.json())
+//   .then(data => { /* render mood chart */ });
+
+// TODO: Connect to Node.js backend API for daily logs
+// Example:
+// fetch('/api/logs', { headers: { Authorization: 'Bearer TOKEN' } })
+//   .then(res => res.json())
+//   .then(data => { /* render logs */ });
+
+// TODO: Connect to Node.js backend API for achievements/XP
+// Example:
+// fetch('/api/achievements', { headers: { Authorization: 'Bearer TOKEN' } })
+//   .then(res => res.json())
+//   .then(data => { /* render achievements */ }); 

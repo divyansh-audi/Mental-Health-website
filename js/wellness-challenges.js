@@ -10,188 +10,11 @@ const modalJoin = document.getElementById('modalJoin');
 const filterButtons = document.querySelectorAll('.filter-button');
 
 // Challenge Data
-const challenges = [
-    {
-        id: 1,
-        title: "30-Day Mindfulness Journey",
-        description: "Develop a daily meditation practice and cultivate inner peace through guided sessions and reflection exercises.",
-        category: "mindfulness",
-        icon: "🧘",
-        duration: "30 days",
-        participants: "2.1k",
-        rating: "4.8/5",
-        difficulty: "Beginner",
-        rewards: ["+100 XP", "+2 Badges", "+1 Achievement"],
-        status: "active",
-        progress: 65,
-        currentDay: 19
-    },
-    {
-        id: 2,
-        title: "Home Workout Challenge",
-        description: "Build strength and endurance with daily home exercises, no equipment required.",
-        category: "fitness",
-        icon: "💪",
-        duration: "21 days",
-        participants: "890",
-        rating: "4.6/5",
-        difficulty: "Intermediate",
-        rewards: ["+75 XP", "+1 Badge"],
-        status: "available",
-        progress: 0,
-        currentDay: 0
-    },
-    {
-        id: 3,
-        title: "Daily Gratitude Practice",
-        description: "Cultivate a positive mindset by practicing daily gratitude and appreciation.",
-        category: "mindfulness",
-        icon: "🙏",
-        duration: "14 days",
-        participants: "1.5k",
-        rating: "4.9/5",
-        difficulty: "Beginner",
-        rewards: ["+50 XP", "+1 Badge"],
-        status: "active",
-        progress: 50,
-        currentDay: 7
-    },
-    {
-        id: 4,
-        title: "Hydration Challenge",
-        description: "Stay hydrated and improve your overall health with daily water intake tracking.",
-        category: "nutrition",
-        icon: "💧",
-        duration: "7 days",
-        participants: "650",
-        rating: "4.7/5",
-        difficulty: "Beginner",
-        rewards: ["+30 XP", "+1 Badge"],
-        status: "active",
-        progress: 43,
-        currentDay: 3
-    },
-    {
-        id: 5,
-        title: "Social Connection Challenge",
-        description: "Strengthen relationships and build meaningful connections with others.",
-        category: "social",
-        icon: "👥",
-        duration: "10 days",
-        participants: "1.2k",
-        rating: "4.5/5",
-        difficulty: "Intermediate",
-        rewards: ["+60 XP", "+1 Badge"],
-        status: "available",
-        progress: 0,
-        currentDay: 0
-    },
-    {
-        id: 6,
-        title: "Digital Detox Challenge",
-        description: "Reduce screen time and reconnect with the real world around you.",
-        category: "mindfulness",
-        icon: "📱",
-        duration: "5 days",
-        participants: "750",
-        rating: "4.4/5",
-        difficulty: "Advanced",
-        rewards: ["+80 XP", "+2 Badges"],
-        status: "available",
-        progress: 0,
-        currentDay: 0
-    },
-    {
-        id: 7,
-        title: "Healthy Eating Challenge",
-        description: "Adopt healthier eating habits and learn about nutrition.",
-        category: "nutrition",
-        icon: "🥗",
-        duration: "14 days",
-        participants: "980",
-        rating: "4.6/5",
-        difficulty: "Intermediate",
-        rewards: ["+70 XP", "+1 Badge"],
-        status: "available",
-        progress: 0,
-        currentDay: 0
-    },
-    {
-        id: 8,
-        title: "Morning Routine Challenge",
-        description: "Establish a productive and energizing morning routine.",
-        category: "fitness",
-        icon: "🌅",
-        duration: "21 days",
-        participants: "1.1k",
-        rating: "4.7/5",
-        difficulty: "Intermediate",
-        rewards: ["+85 XP", "+1 Badge"],
-        status: "available",
-        progress: 0,
-        currentDay: 0
-    },
-    {
-        id: 9,
-        title: "Kindness Challenge",
-        description: "Spread positivity by performing daily acts of kindness.",
-        category: "social",
-        icon: "❤️",
-        duration: "7 days",
-        participants: "850",
-        rating: "4.8/5",
-        difficulty: "Beginner",
-        rewards: ["+40 XP", "+1 Badge"],
-        status: "available",
-        progress: 0,
-        currentDay: 0
-    },
-    {
-        id: 10,
-        title: "Sleep Quality Challenge",
-        description: "Improve your sleep habits and get better rest.",
-        category: "mindfulness",
-        icon: "😴",
-        duration: "14 days",
-        participants: "720",
-        rating: "4.5/5",
-        difficulty: "Intermediate",
-        rewards: ["+65 XP", "+1 Badge"],
-        status: "available",
-        progress: 0,
-        currentDay: 0
-    },
-    {
-        id: 11,
-        title: "Walking Challenge",
-        description: "Increase your daily step count and improve cardiovascular health.",
-        category: "fitness",
-        icon: "🚶",
-        duration: "30 days",
-        participants: "1.8k",
-        rating: "4.6/5",
-        difficulty: "Beginner",
-        rewards: ["+90 XP", "+2 Badges"],
-        status: "available",
-        progress: 0,
-        currentDay: 0
-    },
-    {
-        id: 12,
-        title: "Community Support Challenge",
-        description: "Support and encourage others in their wellness journey.",
-        category: "social",
-        icon: "🤝",
-        duration: "10 days",
-        participants: "620",
-        rating: "4.7/5",
-        difficulty: "Beginner",
-        rewards: ["+55 XP", "+1 Badge"],
-        status: "available",
-        progress: 0,
-        currentDay: 0
-    }
-];
+// TODO: Connect to Node.js backend API for challenges and user progress
+// Example:
+// fetch('/api/challenges', { headers: { Authorization: 'Bearer TOKEN' } })
+//   .then(res => res.json())
+//   .then(data => { /* render challenges */ });
 
 // Current filter
 let currentFilter = 'all';
@@ -234,7 +57,7 @@ function setupEventListeners() {
             e.target.classList.add('active');
         });
     });
-
+    
     // Challenge cards
     document.addEventListener('click', (e) => {
         if (e.target.closest('.challenge-card')) {
@@ -280,9 +103,9 @@ function renderChallenges(category = 'all') {
         return;
     }
     filtered.forEach(ch => {
-        const card = document.createElement('div');
+    const card = document.createElement('div');
         card.className = 'challenge-card premium-card';
-        card.innerHTML = `
+    card.innerHTML = `
             <div class="challenge-icon">${ch.icon || ch.emoji || ''}</div>
             <h3 class="challenge-title">${ch.title}</h3>
             <p class="challenge-desc">${ch.description}</p>
@@ -291,7 +114,7 @@ function renderChallenges(category = 'all') {
                 <span class="progress-text">${ch.progress || 0}% Complete</span>
             </div>
             <button class="btn-primary">Join Challenge</button>
-        `;
+    `;
         challengesGrid.appendChild(card);
     });
 }
@@ -534,44 +357,102 @@ function loadChallenges() {
     }
 }
 
-// ===== ANIMATIONS =====
-// Add CSS animations dynamically
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+// ===== PREMIUM ANIMATION SYSTEM =====
+// Intersection Observer for fade-in and staggered animations
+(function() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        if (entry.target.classList.contains('animate-stagger')) {
+          const children = entry.target.children;
+          Array.from(children).forEach((child, index) => {
+            setTimeout(() => {
+              child.style.opacity = '1';
+              child.style.transform = 'translateY(0)';
+            }, index * 100);
+          });
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+      }
+    });
+  }, observerOptions);
+  const animatedElements = document.querySelectorAll(
+    '.observe-fade-in, .observe-slide-up, .observe-scale-in, .animate-stagger'
+  );
+  animatedElements.forEach(el => observer.observe(el));
+})();
+
+// Scroll progress bar
+(function() {
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.appendChild(progressBar);
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+})();
+
+// Ripple effect for buttons
+(function() {
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('button, .btn');
+    if (!target) return;
+    const rect = target.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    target.style.position = 'relative';
+    target.style.overflow = 'hidden';
+    target.appendChild(ripple);
+    setTimeout(() => { ripple.remove(); }, 300);
+  });
+})();
+
+// Smooth scrolling for anchor links
+(function() {
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop - 80;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+
+// Typewriter effect for .typewriter elements
+(function() {
+  const typewriterElements = document.querySelectorAll('.typewriter');
+  typewriterElements.forEach(el => {
+    const text = el.textContent;
+    el.textContent = '';
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+      }
     }
-    
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(100%);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-    
-    @keyframes slideOutRight {
-        from {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        to {
-            opacity: 0;
-            transform: translateX(100%);
-        }
-    }
-`;
-document.head.appendChild(style);
+    typeWriter();
+  });
+})();
 
 // ===== EXPORT FUNCTIONS FOR OTHER PAGES =====
 window.challengeSystem = {

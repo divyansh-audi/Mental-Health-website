@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderAvatarCustomization();
     renderRecentAchievements();
     renderGoals();
+    renderProgressGraph();
 });
 
 // ===== PAGE INITIALIZATION =====
@@ -524,4 +525,102 @@ style.textContent = `
         }
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// ===== PROFILE PAGE PROGRESS GRAPH =====
+(function() {
+  function loadChartJs(callback) {
+    if (window.Chart) return callback();
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+    script.onload = callback;
+    document.head.appendChild(script);
+  }
+
+  function renderProgressGraph() {
+    var ctx = document.getElementById('progressGraph').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Mood Score',
+          data: [6, 7, 8, 7, 9, 8, 10],
+          borderColor: 'rgba(139,92,246,1)',
+          backgroundColor: 'rgba(139,92,246,0.08)',
+          pointBackgroundColor: 'rgba(236,72,153,1)',
+          pointRadius: 6,
+          pointHoverRadius: 8,
+          borderWidth: 3,
+          tension: 0.4,
+          fill: true,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: 'rgba(139,92,246,0.95)',
+            titleColor: '#fff',
+            bodyColor: '#fff',
+            borderColor: 'rgba(236,72,153,0.7)',
+            borderWidth: 1,
+            padding: 12,
+            caretSize: 7,
+          }
+        },
+        scales: {
+          y: {
+            min: 0,
+            max: 10,
+            ticks: {
+              color: '#6b7280',
+              font: { family: 'Inter', size: 13 }
+            },
+            grid: { color: 'rgba(139,92,246,0.08)' }
+          },
+          x: {
+            ticks: {
+              color: '#6b7280',
+              font: { family: 'Inter', size: 13 }
+            },
+            grid: { display: false }
+          }
+        },
+        animation: {
+          duration: 1200,
+          easing: 'easeOutQuart',
+          onComplete: function() {
+            document.getElementById('progressGraph').style.opacity = 1;
+          }
+        }
+      }
+    });
+    document.getElementById('progressGraph').style.opacity = 0;
+    setTimeout(function() {
+      document.getElementById('progressGraph').style.transition = 'opacity 0.7s';
+      document.getElementById('progressGraph').style.opacity = 1;
+    }, 200);
+  }
+
+  loadChartJs(renderProgressGraph);
+})();
+
+// TODO: Connect to Node.js backend API for user profile
+// Example:
+// fetch('/api/profile', { headers: { Authorization: 'Bearer TOKEN' } })
+//   .then(res => res.json())
+//   .then(data => { /* render profile */ });
+
+// TODO: Connect to Node.js backend API for achievements/XP
+// Example:
+// fetch('/api/achievements', { headers: { Authorization: 'Bearer TOKEN' } })
+//   .then(res => res.json())
+//   .then(data => { /* render achievements */ });
+
+// TODO: Connect to Node.js backend API for logs
+// Example:
+// fetch('/api/logs', { headers: { Authorization: 'Bearer TOKEN' } })
+//   .then(res => res.json())
+//   .then(data => { /* render logs */ }); 

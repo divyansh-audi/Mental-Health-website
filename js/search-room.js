@@ -14,80 +14,11 @@ const modalCancel = document.getElementById('modalCancel');
 const modalJoin = document.getElementById('modalJoin');
 
 // Room Data
-const rooms = [
-    {
-        id: 1,
-        title: 'Mindful Meditation',
-        description: 'A peaceful space for daily meditation and mindfulness practices',
-        category: 'mindfulness',
-        icon: 'meditation',
-        members: '2.1k',
-        messages: '8.5k',
-        rating: '4.8',
-        status: 'featured',
-        joined: false
-    },
-    {
-        id: 2,
-        title: 'Fitness Motivation',
-        description: 'Get motivated and stay active with our fitness community',
-        category: 'fitness',
-        icon: 'fitness',
-        members: '1.8k',
-        messages: '6.2k',
-        rating: '4.6',
-        status: 'active',
-        joined: true
-    },
-    {
-        id: 3,
-        title: 'Healthy Eating',
-        description: 'Share recipes, tips, and support for healthy nutrition',
-        category: 'nutrition',
-        icon: 'nutrition',
-        members: '1.5k',
-        messages: '4.8k',
-        rating: '4.7',
-        status: 'active',
-        joined: false
-    },
-    {
-        id: 4,
-        title: 'Stress Relief',
-        description: 'Techniques and support for managing stress and anxiety',
-        category: 'wellness',
-        icon: 'wellness',
-        members: '3.2k',
-        messages: '12.1k',
-        rating: '4.9',
-        status: 'featured',
-        joined: false
-    },
-    {
-        id: 5,
-        title: 'Sleep Better',
-        description: 'Improve your sleep quality with proven techniques',
-        category: 'wellness',
-        icon: 'sleep',
-        members: '1.2k',
-        messages: '3.4k',
-        rating: '4.5',
-        status: 'active',
-        joined: false
-    },
-    {
-        id: 6,
-        title: 'Creative Expression',
-        description: 'Express yourself through art, writing, and creativity',
-        category: 'creative',
-        icon: 'creative',
-        members: '900',
-        messages: '2.8k',
-        rating: '4.4',
-        status: 'active',
-        joined: false
-    }
-];
+// TODO: Connect to Node.js backend API for searching chatrooms
+// Example:
+// fetch('/api/chatrooms?search=keyword', { headers: { Authorization: 'Bearer TOKEN' } })
+//   .then(res => res.json())
+//   .then(data => { /* render search results */ });
 
 // SVG Icons for rooms
 const roomIcons = {
@@ -487,33 +418,102 @@ function loadRooms() {
     }
 }
 
-// ===== ANIMATIONS =====
-// Add CSS animations dynamically
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(100%);
+// ===== PREMIUM ANIMATION SYSTEM =====
+// Intersection Observer for fade-in and staggered animations
+(function() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        if (entry.target.classList.contains('animate-stagger')) {
+          const children = entry.target.children;
+          Array.from(children).forEach((child, index) => {
+            setTimeout(() => {
+              child.style.opacity = '1';
+              child.style.transform = 'translateY(0)';
+            }, index * 100);
+          });
         }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
+      }
+    });
+  }, observerOptions);
+  const animatedElements = document.querySelectorAll(
+    '.observe-fade-in, .observe-slide-up, .observe-scale-in, .animate-stagger'
+  );
+  animatedElements.forEach(el => observer.observe(el));
+})();
+
+// Scroll progress bar
+(function() {
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.appendChild(progressBar);
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+})();
+
+// Ripple effect for buttons
+(function() {
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('button, .btn');
+    if (!target) return;
+    const rect = target.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    target.style.position = 'relative';
+    target.style.overflow = 'hidden';
+    target.appendChild(ripple);
+    setTimeout(() => { ripple.remove(); }, 300);
+  });
+})();
+
+// Smooth scrolling for anchor links
+(function() {
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop - 80;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+
+// Typewriter effect for .typewriter elements
+(function() {
+  const typewriterElements = document.querySelectorAll('.typewriter');
+  typewriterElements.forEach(el => {
+    const text = el.textContent;
+    el.textContent = '';
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+      }
     }
-    
-    @keyframes slideOutRight {
-        from {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        to {
-            opacity: 0;
-            transform: translateX(100%);
-        }
-    }
-`;
-document.head.appendChild(style);
+    typeWriter();
+  });
+})();
 
 // ===== EXPORT FUNCTIONS FOR OTHER PAGES =====
 window.roomSystem = {

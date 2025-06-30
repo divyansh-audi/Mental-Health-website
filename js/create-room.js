@@ -201,8 +201,15 @@ createRoomForm.addEventListener('submit', async (e) => {
     loadingOverlay.classList.add('active');
     
     try {
-        // Simulate API call
-        await createRoom(roomData);
+        // TODO: Connect to Node.js backend API for creating rooms
+        // Example:
+        // fetch('/api/chatrooms', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json', Authorization: 'Bearer TOKEN' },
+        //   body: JSON.stringify(roomData)
+        // })
+        //   .then(res => res.json())
+        //   .then(data => { /* handle new room */ });
         
         // Hide loading overlay
         loadingOverlay.classList.remove('active');
@@ -218,29 +225,6 @@ createRoomForm.addEventListener('submit', async (e) => {
         showSubmissionError(error.message);
     }
 });
-
-// Simulate room creation API call
-async function createRoom(roomData) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            // Simulate 90% success rate
-            if (Math.random() > 0.1) {
-                // Store room data in localStorage for demo
-                const rooms = JSON.parse(localStorage.getItem('zuuush_rooms') || '[]');
-                rooms.push({
-                    ...roomData,
-                    id: Date.now().toString(),
-                    participants: 1
-                });
-                localStorage.setItem('zuuush_rooms', JSON.stringify(rooms));
-                
-                resolve(roomData);
-            } else {
-                reject(new Error('Failed to create room. Please try again.'));
-            }
-        }, 2000); // 2 second delay to simulate API call
-    });
-}
 
 // Show submission error
 function showSubmissionError(message) {
@@ -806,4 +790,101 @@ style.textContent = `
         transition: all 0.3s ease;
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// ===== PREMIUM ANIMATION SYSTEM =====
+// Intersection Observer for fade-in and staggered animations
+(function() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        if (entry.target.classList.contains('animate-stagger')) {
+          const children = entry.target.children;
+          Array.from(children).forEach((child, index) => {
+            setTimeout(() => {
+              child.style.opacity = '1';
+              child.style.transform = 'translateY(0)';
+            }, index * 100);
+          });
+        }
+      }
+    });
+  }, observerOptions);
+  const animatedElements = document.querySelectorAll(
+    '.observe-fade-in, .observe-slide-up, .observe-scale-in, .animate-stagger'
+  );
+  animatedElements.forEach(el => observer.observe(el));
+})();
+
+// Scroll progress bar
+(function() {
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.appendChild(progressBar);
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+})();
+
+// Ripple effect for buttons
+(function() {
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('button, .btn');
+    if (!target) return;
+    const rect = target.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    target.style.position = 'relative';
+    target.style.overflow = 'hidden';
+    target.appendChild(ripple);
+    setTimeout(() => { ripple.remove(); }, 300);
+  });
+})();
+
+// Smooth scrolling for anchor links
+(function() {
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop - 80;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+
+// Typewriter effect for .typewriter elements
+(function() {
+  const typewriterElements = document.querySelectorAll('.typewriter');
+  typewriterElements.forEach(el => {
+    const text = el.textContent;
+    el.textContent = '';
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+      }
+    }
+    typeWriter();
+  });
+})(); 

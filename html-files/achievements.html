@@ -31,62 +31,27 @@
     <!-- Premium Grid Pattern -->
     <div class="premium-grid"></div>
 
-    <!-- Navigation Button -->
-    <button class="nav" id="navButton">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <!-- Navigation Dropdown -->
-    <div class="nav-dropdown" id="navDropdown">
-        <a href="../index.html" class="nav-option">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"/>
-                <path d="M9 22V12H15V22"/>
-            </svg>
-            Home
-        </a>
-        <a href="../html-files/main.html" class="nav-option">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
-            </svg>
-            Dashboard
-        </a>
-        <a href="../html-files/profile-page.html" class="nav-option">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"/>
-                <circle cx="12" cy="7" r="4"/>
-            </svg>
-            Profile
-        </a>
-        <a href="../html-files/search-room.html" class="nav-option">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="M21 21L16.65 16.65"/>
-            </svg>
-            Search Room
-        </a>
-        <a href="../html-files/create-room.html" class="nav-option">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"/>
-                <path d="M14 2V8H20"/>
-                <path d="M16 13H8"/>
-                <path d="M16 17H8"/>
-                <path d="M10 9H8"/>
-            </svg>
-            Create Room
-        </a>
-        <div class="nav-divider"></div>
-        <button class="nav-option logout-btn" id="logoutBtn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
-                <polyline points="16,17 21,12 16,7"/>
-                <line x1="21" y1="12" x2="9" y2="12"/>
-            </svg>
-            Logout
-        </button>
-    </div>
+    <!-- Navigation Menu -->
+    <nav class="navigation glass">
+      <a href="../index.html" class="nav-item" title="Home" aria-label="Home">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"/><path d="M9 22V12H15V22"/></svg>
+      </a>
+      <a href="../html-files/main.html" class="nav-item" title="Dashboard" aria-label="Dashboard">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="13" width="7" height="8"/><rect x="14" y="3" width="7" height="18"/></svg>
+      </a>
+      <a href="../html-files/profile-page.html" class="nav-item" title="Profile" aria-label="Profile">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 8-4 8-4s8 0 8 4"/></svg>
+      </a>
+      <a href="../html-files/search-room.html" class="nav-item" title="Rooms" aria-label="Rooms">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+      <a href="../html-files/create-room.html" class="nav-item" title="Challenges" aria-label="Challenges">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4"/><path d="M8 3v4"/></svg>
+      </a>
+      <a href="../html-files/achievements.html" class="nav-item active" title="Achievements" aria-label="Achievements">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7.5 21 12 18.5 16.5 21 15.79 13.88"/></svg>
+      </a>
+    </nav>
 
     <!-- Main Content -->
     <main class="achievements-container">

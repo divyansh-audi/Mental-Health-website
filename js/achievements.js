@@ -1,8 +1,6 @@
 // ===== ACHIEVEMENTS PAGE JAVASCRIPT =====
 
 // DOM Elements
-const navButton = document.getElementById('navButton');
-const navDropdown = document.getElementById('navDropdown');
 const logoutBtn = document.getElementById('logoutBtn');
 const achievementsGrid = document.getElementById('achievementsGrid');
 const categoryCards = document.querySelectorAll('.category-card');
@@ -174,10 +172,6 @@ function initializePage() {
 
 // ===== EVENT LISTENERS =====
 function setupEventListeners() {
-    // Navigation
-    navButton.addEventListener('click', toggleNavigation);
-    document.addEventListener('click', handleOutsideClick);
-    
     // Logout
     logoutBtn.addEventListener('click', handleLogout);
     
@@ -199,19 +193,6 @@ function setupEventListeners() {
     
     // Achievement cards
     achievementsGrid.addEventListener('click', handleAchievementClick);
-}
-
-// ===== NAVIGATION FUNCTIONS =====
-function toggleNavigation() {
-    navButton.classList.toggle('active');
-    navDropdown.classList.toggle('active');
-}
-
-function handleOutsideClick(event) {
-    if (!navButton.contains(event.target) && !navDropdown.contains(event.target)) {
-        navButton.classList.remove('active');
-        navDropdown.classList.remove('active');
-    }
 }
 
 function handleLogout() {
@@ -510,4 +491,10 @@ window.achievementSystem = {
 };
 
 // Load saved achievements on page load
-loadAchievements(); 
+loadAchievements();
+
+// TODO: Connect to Node.js backend API for achievements/XP
+// Example:
+// fetch('/api/achievements', { headers: { Authorization: 'Bearer TOKEN' } })
+//   .then(res => res.json())
+//   .then(data => { /* render achievements */ }); 

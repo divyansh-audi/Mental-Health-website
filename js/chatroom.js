@@ -9,106 +9,18 @@ const messageInput = document.getElementById('messageInput');
 const sendBtn = document.getElementById('sendBtn');
 const memberList = document.getElementById('memberList');
 
-// Demo data
-const demoMessages = [
-    {
-        id: 1,
-        author: 'Sarah',
-        text: 'Hey everyone! How is your wellness journey going today? 🌱',
-        time: '2:30 PM',
-        own: false,
-        avatar: 'S',
-        reactions: { '❤️': 3, '👍': 2 }
-    },
-    {
-        id: 2,
-        author: 'Mike',
-        text: 'Just completed my morning meditation. Feeling really centered! 🧘‍♂️',
-        time: '2:32 PM',
-        own: false,
-        avatar: 'M',
-        reactions: { '🙏': 4, '✨': 2 }
-    },
-    {
-        id: 3,
-        author: 'You',
-        text: 'That\'s amazing Mike! I\'m trying to build a consistent meditation habit too. Any tips?',
-        time: '2:35 PM',
-        own: true,
-        avatar: 'Y',
-        reactions: { '💪': 1 }
-    },
-    {
-        id: 4,
-        author: 'Emma',
-        text: 'Anyone up for a quick breathing exercise? I found this great 5-minute routine! 🌬️',
-        time: '2:37 PM',
-        own: false,
-        avatar: 'E',
-        reactions: { '🙋‍♀️': 2, '💙': 1 }
-    },
-    {
-        id: 5,
-        author: 'David',
-        text: 'Count me in! I could use a moment to reset. Thanks for sharing Emma!',
-        time: '2:38 PM',
-        own: false,
-        avatar: 'D',
-        reactions: { '👍': 3 }
-    }
-];
-
-const demoMembers = [
-    { 
-        name: 'Sarah', 
-        status: 'online', 
-        avatar: 'S',
-        lastSeen: '2 minutes ago',
-        typing: false
-    },
-    { 
-        name: 'Mike', 
-        status: 'online', 
-        avatar: 'M',
-        lastSeen: '1 minute ago',
-        typing: true
-    },
-    { 
-        name: 'Emma', 
-        status: 'online', 
-        avatar: 'E',
-        lastSeen: 'now',
-        typing: false
-    },
-    { 
-        name: 'David', 
-        status: 'online', 
-        avatar: 'D',
-        lastSeen: '30 seconds ago',
-        typing: false
-    },
-    { 
-        name: 'Lisa', 
-        status: 'offline', 
-        avatar: 'L',
-        lastSeen: '2 hours ago',
-        typing: false
-    },
-    { 
-        name: 'John', 
-        status: 'offline', 
-        avatar: 'J',
-        lastSeen: '1 day ago',
-        typing: false
-    }
-];
-
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', function() {
     initializePage();
     setupEventListeners();
-    loadDemoData();
-    startTypingSimulation();
+    // TODO: Connect to Node.js backend API for chatrooms and messages
+    // Example:
+    // fetch('/api/chatrooms', { headers: { Authorization: 'Bearer TOKEN' } })
+    //   .then(res => res.json())
+    //   .then(data => { /* render chatrooms */ });
+    // fetch('/api/chatrooms/:roomId/messages', { headers: { Authorization: 'Bearer TOKEN' } })
+    //   .then(res => res.json())
+    //   .then(data => { /* render messages */ });
 });
 
 // ===== PAGE INITIALIZATION =====
@@ -202,23 +114,6 @@ function handleLogout() {
 }
 
 // ===== CHAT FUNCTIONS =====
-function loadDemoData() {
-    // Load demo messages with premium animations
-    demoMessages.forEach((message, index) => {
-        setTimeout(() => {
-            addMessageToChat(message);
-        }, index * 200);
-    });
-    
-    // Load demo members
-    renderMembers();
-    
-    // Scroll to bottom with smooth animation
-    setTimeout(() => {
-        scrollToBottom();
-    }, demoMessages.length * 200 + 500);
-}
-
 function sendMessage() {
     const text = messageInput.value.trim();
     if (!text) return;
@@ -260,21 +155,21 @@ function sendMessage() {
         const randomMember = demoMembers.filter(m => m.status === 'online' && m.name !== 'You')[Math.floor(Math.random() * 3)];
         
         if (randomMember) {
-            const responseMessage = {
-                id: Date.now() + 1,
-                author: randomMember.name,
-                text: randomResponse,
-                time: new Date().toLocaleTimeString('en-US', { 
-                    hour: 'numeric', 
-                    minute: '2-digit',
-                    hour12: true 
-                }),
+        const responseMessage = {
+            id: Date.now() + 1,
+            author: randomMember.name,
+            text: randomResponse,
+            time: new Date().toLocaleTimeString('en-US', { 
+                hour: 'numeric', 
+                minute: '2-digit',
+                hour12: true 
+            }),
                 own: false,
                 avatar: randomMember.avatar,
                 reactions: {}
-            };
-            
-            addMessageToChat(responseMessage);
+        };
+        
+        addMessageToChat(responseMessage);
         }
     }, 1000 + Math.random() * 2000);
 }
@@ -447,7 +342,7 @@ function debounce(func, wait) {
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
     };
-}
+} 
 
 // ===== PREMIUM TYPING INDICATORS =====
 let isTyping = false;

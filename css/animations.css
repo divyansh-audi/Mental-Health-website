@@ -56,14 +56,14 @@
     transform: translateY(30px);
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
   }
 }
 
 @keyframes fadeInDown {
   0% {
-    opacity: 0;
+  opacity: 0;
     transform: translateY(-30px);
   }
   100% {
@@ -78,20 +78,20 @@
     transform: translateX(-30px);
   }
   100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  opacity: 1;
+  transform: translateX(0);
+}
 }
 
 @keyframes fadeInRight {
   0% {
-    opacity: 0;
+  opacity: 0;
     transform: translateX(30px);
   }
   100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  opacity: 1;
+  transform: translateX(0);
+}
 }
 
 /* Floating/Breathing Animation */
@@ -162,7 +162,7 @@
   }
   100% {
     transform: scale(4);
-    opacity: 0;
+  opacity: 0;
   }
 }
 
@@ -171,22 +171,22 @@
   0% {
     transform: translateX(100%);
     opacity: 0;
-  }
+}
   100% {
     transform: translateX(0);
-    opacity: 1;
+  opacity: 1;
   }
 }
 
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);
-    opacity: 0;
+  opacity: 0;
   }
   100% {
     transform: translateX(0);
     opacity: 1;
-  }
+}
 }
 
 /* ===== CONTENT SECTION ANIMATIONS ===== */
@@ -198,9 +198,9 @@
     transform: translateY(50px);
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 1;
+  transform: translateY(0);
+}
 }
 
 @keyframes slideDown {
@@ -245,7 +245,7 @@
   100% {
     transform: translateY(0);
     opacity: 1;
-  }
+}
 }
 
 /* ===== CARD ANIMATIONS ===== */
@@ -254,10 +254,10 @@
 @keyframes cardFlip {
   0% {
     transform: rotateY(0deg);
-  }
+}
   100% {
     transform: rotateY(180deg);
-  }
+}
 }
 
 /* Card Hover Effects */
@@ -265,7 +265,7 @@
   0% {
     transform: translateY(0) rotateX(0);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
+}
   100% {
     transform: translateY(-8px) rotateX(2deg);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -293,7 +293,7 @@
   }
   100% {
     transform: rotate(360deg);
-  }
+}
 }
 
 @keyframes pulse {
@@ -312,10 +312,10 @@
   }
   40%, 43% {
     transform: translate3d(0, -8px, 0);
-  }
+}
   70% {
     transform: translate3d(0, -4px, 0);
-  }
+}
   90% {
     transform: translate3d(0, -2px, 0);
   }
@@ -349,7 +349,7 @@
 @keyframes iconRotate {
   0% {
     transform: rotate(0deg);
-  }
+}
   100% {
     transform: rotate(360deg);
   }
@@ -373,10 +373,10 @@
 @keyframes iconMorph {
   0% {
     transform: scale(1) rotate(0deg);
-  }
+}
   50% {
     transform: scale(1.1) rotate(5deg);
-  }
+}
   100% {
     transform: scale(1) rotate(0deg);
   }
@@ -419,23 +419,23 @@
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
-  }
+}
   50% {
     background-position: 100% 50%;
-  }
+}
   100% {
     background-position: 0% 50%;
-  }
+}
 }
 
 /* Elastic Animations */
 @keyframes elasticIn {
   0% {
     transform: scale(0);
-  }
+}
   50% {
     transform: scale(1.2);
-  }
+}
   100% {
     transform: scale(1);
   }
@@ -447,10 +447,10 @@
   }
   50% {
     transform: scale(1.1);
-  }
+}
   100% {
     transform: scale(0);
-  }
+}
 }
 
 /* ===== PARTICLE SYSTEM ===== */
@@ -493,11 +493,11 @@
 
 @keyframes textSlideIn {
   0% {
-    transform: translateX(-100%);
+  transform: translateX(-100%);
     opacity: 0;
-  }
+}
   100% {
-    transform: translateX(0);
+  transform: translateX(0);
     opacity: 1;
   }
 }
@@ -515,7 +515,7 @@
   100% {
     transform: scale(1);
     opacity: 1;
-  }
+}
 }
 
 /* ===== PAGE TRANSITIONS ===== */
@@ -841,7 +841,7 @@
 
 .animation-container {
   will-change: transform;
-}
+  }
 
 /* ===== ACCESSIBILITY ===== */
 @media (prefers-reduced-motion: reduce) {
