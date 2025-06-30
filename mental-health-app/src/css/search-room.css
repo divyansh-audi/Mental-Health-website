@@ -511,14 +511,14 @@ body::after {
   .nav-item svg {
     width: 1rem !important;
     height: 1rem !important;
-  }
+}
 }
 
 @media (max-width: 480px) {
   .navigation {
     left: 0.5rem !important;
     padding: 0.75rem 0.5rem !important;
-  }
+}
   .nav-item {
     width: 2.25rem !important;
     height: 2.25rem !important;

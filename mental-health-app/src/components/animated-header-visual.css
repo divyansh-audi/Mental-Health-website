@@ -1,0 +1,27 @@
+.animated-header-visual-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: var(--radius-3xl);
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(139,92,246,0.10);
+}
+
+.animated-header-visual-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: blur(0.5px) brightness(1.08) saturate(1.1);
+  border-radius: var(--radius-3xl);
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .animated-header-visual-bg {
+    height: 200px;
+  }
+} 
