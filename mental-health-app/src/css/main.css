@@ -102,6 +102,9 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
@@ -114,6 +117,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
 /* ===== GLOBAL BACKGROUND ANIMATIONS ===== */
@@ -130,71 +136,222 @@ body {
 
 .global-shapes .floating-shape {
   position: absolute;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   border-radius: 50%;
-  opacity: 0.05;
-  animation: float-shape 25s infinite linear;
+  opacity: 0.28;
+  filter: blur(1.5px);
+  will-change: transform, opacity;
 }
 
 .global-shapes .floating-shape:nth-child(1) {
-  width: 100px;
-  height: 100px;
-  top: 10%;
-  left: 5%;
+  width: 120px;
+  height: 120px;
+  top: 15%;
+  left: 8%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  animation: float-shape-1 45s infinite ease-in-out;
   animation-delay: 0s;
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
 }
 
 .global-shapes .floating-shape:nth-child(2) {
-  width: 150px;
-  height: 150px;
-  top: 70%;
-  right: 5%;
-  animation-delay: -5s;
+  width: 180px;
+  height: 180px;
+  top: 75%;
+  right: 8%;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  animation: float-shape-2 52s infinite ease-in-out;
+  animation-delay: -8s;
+  box-shadow: 0 0 40px rgba(240, 147, 251, 0.3);
 }
 
 .global-shapes .floating-shape:nth-child(3) {
-  width: 80px;
-  height: 80px;
-  bottom: 10%;
-  left: 15%;
-  animation-delay: -10s;
+  width: 90px;
+  height: 90px;
+  bottom: 15%;
+  left: 20%;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  animation: float-shape-3 38s infinite ease-in-out;
+  animation-delay: -15s;
+  box-shadow: 0 0 25px rgba(79, 172, 254, 0.3);
 }
 
 .global-shapes .floating-shape:nth-child(4) {
-  width: 120px;
-  height: 120px;
-  top: 30%;
-  right: 20%;
-  animation-delay: -15s;
+  width: 150px;
+  height: 150px;
+  top: 35%;
+  right: 25%;
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  animation: float-shape-4 48s infinite ease-in-out;
+  animation-delay: -22s;
+  box-shadow: 0 0 35px rgba(67, 233, 123, 0.3);
 }
 
 .global-shapes .floating-shape:nth-child(5) {
-  width: 60px;
-  height: 60px;
-  top: 60%;
-  left: 30%;
-  animation-delay: -20s;
+  width: 70px;
+  height: 70px;
+  top: 65%;
+  left: 35%;
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  animation: float-shape-5 41s infinite ease-in-out;
+  animation-delay: -5s;
+  box-shadow: 0 0 20px rgba(250, 112, 154, 0.3);
 }
 
 .global-shapes .floating-shape:nth-child(6) {
-  width: 90px;
-  height: 90px;
-  bottom: 30%;
-  right: 10%;
-  animation-delay: -25s;
+  width: 110px;
+  height: 110px;
+  bottom: 35%;
+  right: 15%;
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  animation: float-shape-6 44s infinite ease-in-out;
+  animation-delay: -18s;
+  box-shadow: 0 0 30px rgba(161, 140, 209, 0.3);
 }
 
-@keyframes float-shape {
+/* Rising bubble animations - bubbles start from bottom and rise to top */
+@keyframes float-shape-1 {
   0% {
-    transform: translateY(0px) rotate(0deg);
-    opacity: 0.05;
+    transform: translate(0, 100vh) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(15px, 90vh) rotate(36deg) scale(0.9);
+    opacity: 0.3;
   }
   50% {
-    opacity: 0.15;
+    transform: translate(-10px, 50vh) rotate(180deg) scale(1.1);
+    opacity: 0.4;
+  }
+  90% {
+    transform: translate(-20px, 10vh) rotate(324deg) scale(0.9);
+    opacity: 0.2;
   }
   100% {
-    transform: translateY(-100vh) rotate(360deg);
-    opacity: 0.05;
+    transform: translate(-25px, -20vh) rotate(360deg) scale(0.7);
+    opacity: 0;
+  }
+}
+
+@keyframes float-shape-2 {
+  0% {
+    transform: translate(0, 100vh) rotate(0deg) scale(0.7);
+    opacity: 0;
+  }
+  15% {
+    transform: translate(-20px, 85vh) rotate(54deg) scale(0.8);
+    opacity: 0.3;
+  }
+  40% {
+    transform: translate(-35px, 60vh) rotate(144deg) scale(1.2);
+    opacity: 0.5;
+  }
+  70% {
+    transform: translate(-25px, 30vh) rotate(252deg) scale(1.0);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-30px, -30vh) rotate(360deg) scale(0.6);
+    opacity: 0;
+  }
+}
+
+@keyframes float-shape-3 {
+  0% {
+    transform: translate(0, 100vh) rotate(0deg) scale(0.9);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(25px, 80vh) rotate(72deg) scale(1.0);
+    opacity: 0.4;
+  }
+  60% {
+    transform: translate(15px, 40vh) rotate(216deg) scale(1.3);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(5px, -25vh) rotate(360deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes float-shape-4 {
+  0% {
+    transform: translate(0, 100vh) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(-15px, 90vh) rotate(36deg) scale(0.9);
+    opacity: 0.3;
+  }
+  30% {
+    transform: translate(-30px, 70vh) rotate(108deg) scale(1.1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-20px, 50vh) rotate(180deg) scale(1.2);
+    opacity: 0.6;
+  }
+  70% {
+    transform: translate(-10px, 30vh) rotate(252deg) scale(1.0);
+    opacity: 0.4;
+  }
+  90% {
+    transform: translate(-5px, 10vh) rotate(324deg) scale(0.8);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(-2px, -20vh) rotate(360deg) scale(0.6);
+    opacity: 0;
+  }
+}
+
+@keyframes float-shape-5 {
+  0% {
+    transform: translate(0, 100vh) rotate(0deg) scale(0.7);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(20px, 75vh) rotate(90deg) scale(0.9);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(10px, 50vh) rotate(180deg) scale(1.1);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(-5px, 25vh) rotate(270deg) scale(0.9);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-10px, -15vh) rotate(360deg) scale(0.7);
+    opacity: 0;
+  }
+}
+
+@keyframes float-shape-6 {
+  0% {
+    transform: translate(0, 100vh) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(-10px, 80vh) rotate(72deg) scale(0.9);
+    opacity: 0.3;
+  }
+  40% {
+    transform: translate(-20px, 60vh) rotate(144deg) scale(1.1);
+    opacity: 0.5;
+  }
+  60% {
+    transform: translate(-15px, 40vh) rotate(216deg) scale(1.2);
+    opacity: 0.6;
+  }
+  80% {
+    transform: translate(-5px, 20vh) rotate(288deg) scale(0.9);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-8px, -25vh) rotate(360deg) scale(0.7);
+    opacity: 0;
   }
 }
 
